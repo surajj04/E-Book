@@ -32,8 +32,7 @@ public class LoginServlet extends HttpServlet {
             } else {
                 if (repo.userLogin(email, pass) != null) {
                     session.setAttribute("user",user);
-                    System.out.println(user);
-                    res.sendRedirect("home.jsp");
+                    res.sendRedirect("profile.jsp");
                 } else {
                     res.sendRedirect("error.jsp");
                 }

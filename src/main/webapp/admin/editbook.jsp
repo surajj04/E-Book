@@ -12,9 +12,9 @@
 
             <body class="bg-gray-100">
                 <%@include file="Navbar.jsp" %>
-  <c:if test="${empty user}">
-            <c:redirect url="../login.jsp"/>
-        </c:if>
+                    <c:if test="${empty user}">
+                        <c:redirect url="../login.jsp" />
+                    </c:if>
                     <div class="w-1/3 mx-auto my-10 border bg-white p-8 ">
 
                         <% int id=Integer.parseInt(request.getParameter("id")); BookService service=new BookService();
@@ -90,8 +90,7 @@
                                                     class="text-red-500">*</span></label>
                                             <input placeholder="Email"
                                                 class="appearance-none block w-full py-2 bg-light text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
-                                                type="email" name="email"
-                                                value="<%=book.getEmail()%>">
+                                                type="email" name="email" value="<%=book.getEmail()%>">
                                             <p class="text-sm text-red-500 hidden mt-3" id="error"></p>
                                         </div>
                                         <div class="w-full flex flex-col mb-3">

@@ -64,4 +64,30 @@ public class UserService {
         return user;
     }
 
+
+    public boolean userUpdate(User user) {
+
+        try {
+
+            String sql = "UPDATE your_table_name\n" +
+                    "SET name = ?,email = ?,phone = ?,address = ?,landmark = '',city = ?,state = ? WHERE id = ? ";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, user.getName());
+            ps.setString(2, user.getEmail());
+            ps.setString(3, user.getPhone());
+            ps.setString(4, user.getAddress());
+            ps.setString(5, user.getCity());
+            ps.setString(6, user.getState());
+            ps.setInt(7, user.getId());
+
+            if (ps.executeUpdate() == 1) {
+                return true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 }
