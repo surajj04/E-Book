@@ -19,6 +19,8 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         HttpSession session = req.getSession();
+        HttpSession session1 = req.getSession();
+        session1.removeAttribute("error");
         try {
 
             String email = req.getParameter("email");

@@ -28,6 +28,7 @@
                                                 <div class="absolute opacity-60 inset-0 z-0"></div>
                                                 <div
                                                     class="max-w-md w-full space-y-8 p-10 bg-white border rounded-xl shadow-lg z-10">
+                                                    <p class="text-red-500">${error}</p>
                                                     <div class="grid  gap-8 grid-cols-1">
                                                         <div class="flex flex-col ">
                                                             <div class="flex flex-col sm:flex-row items-center">

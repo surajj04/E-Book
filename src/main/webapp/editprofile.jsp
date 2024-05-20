@@ -48,19 +48,18 @@
                                                                         Please fill out this field.
                                                                     </p>
                                                                 </div>
-                                                                <div class="mb-3 space-y-2 w-full text-xs">
+
+                                                                <div class="w-full flex flex-col mb-3">
                                                                     <label
-                                                                        class="font-semibold text-gray-600 py-2">Mobile
-                                                                        no <span title="required"
+                                                                        class="font-semibold text-gray-600 py-2">Mobile No
+                                                                        <span title="required"
                                                                             class="text-red-500">*</span></label>
                                                                     <input placeholder="Mobile No"
                                                                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
-                                                                        required="required" type="number" name="phone"
-                                                                        id="integration_shop_name"
-                                                                        value="<%=user.getPhone()%>">
-                                                                    <p class="text-red text-xs hidden">
-                                                                        Please fill out this field.
-                                                                    </p>
+                                                                        type="text" name="phone"
+                                                                        value="<%= user.getPhone() != null ? user.getPhone() : "" %>">
+
+
                                                                 </div>
                                                             </div>
                                                             <div class=" w-full text-xs">

@@ -21,6 +21,13 @@ public class LogoutServlet extends HttpServlet {
             resp.sendRedirect("login.jsp");
 
         } catch (Exception e) {
+            HttpSession session = req.getSession();
+            session.removeAttribute("error");
+            session.removeAttribute("errorTitle");
+
+            session.setAttribute("errorTitle", e.getMessage());
+            session.setAttribute("error", "");
+
             e.printStackTrace();
         }
 

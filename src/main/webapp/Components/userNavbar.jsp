@@ -16,7 +16,7 @@
 		<ul class="flex items-center space-x-2">
 			<li class="text-sm">
 				<button class="flex items-center justify-center px-1 py-2 text-gray-900 font-semibold rounded">
-					<a class="ml-1  mx-3" href="cart.jsp"><i class="fa-solid fa-user-plus"></i> Cart</a>
+					<a class="ml-1  mx-3" href="cart"><i class="fa-solid fa-user-plus"></i> Cart</a>
 				</button>
 			</li>
 			<li class="text-sm">
@@ -144,4 +144,23 @@
 	};
 </script>
 
+</script>
+
+
+<script>
+
+	const changeMode = (text) => {
+		const ele = document.getElementById("btn-text");
+		switch (text) {
+			case 1:
+				ele.innerText = "Place Your Order";
+				break;
+			case 2:
+				ele.innerText = "PAY NOW";
+				break;
+			default:
+				break;
+		}
+
+	}
 </script>

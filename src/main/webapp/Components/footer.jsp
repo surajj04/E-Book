@@ -1,4 +1,4 @@
-<footer class="bg-white mt-50">
+<footer class="bg-white mt-50 ">
     <div class="container px-6 py-8 mx-auto">
         <hr class="my-10 border-gray-200" />
 

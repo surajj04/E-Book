@@ -13,6 +13,37 @@ public class UserService {
     private DBConnect db = new DBConnect();
     private Connection con = db.DbConnection();
 
+
+    public User getUser(int id) {
+        User user = null;
+
+        try {
+
+            String sql ="SELECT * FROM user WHERE id = ?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                user = new User();
+                user.setId(rs.getInt(1));
+                user.setName(rs.getString(2));
+                user.setEmail(rs.getString(3));
+                user.setPassword(rs.getString(4));
+                user.setPhone(rs.getString(5));
+                user.setAddress(rs.getString(6));
+                user.setCity(rs.getString(7));
+                user.setState(rs.getString(8));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        return user;
+    }
+
     public boolean UserRegister(User user) {
 
         try {
@@ -52,9 +83,8 @@ public class UserService {
                 user.setPassword(rs.getString(4));
                 user.setPhone(rs.getString(5));
                 user.setAddress(rs.getString(6));
-                user.setLandmark(rs.getString(7));
-                user.setCity(rs.getString(8));
-                user.setState(rs.getString(9));
+                user.setCity(rs.getString(7));
+                user.setState(rs.getString(8));
 
             }
         } catch (Exception e) {
@@ -69,8 +99,7 @@ public class UserService {
 
         try {
 
-            String sql = "UPDATE your_table_name\n" +
-                    "SET name = ?,email = ?,phone = ?,address = ?,landmark = '',city = ?,state = ? WHERE id = ? ";
+            String sql = "UPDATE user SET name = ?,email = ?,phone = ?,address = ?,city = ?,state = ? WHERE id = ? ";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, user.getName());
             ps.setString(2, user.getEmail());

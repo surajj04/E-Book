@@ -28,7 +28,7 @@ public class UserUpdate extends HttpServlet {
         String phone = req.getParameter("phone");
         String email = req.getParameter("email");
         String address = req.getParameter("address");
-        String state = req.getParameter("state");s
+        String state = req.getParameter("state");
         String city = req.getParameter("city");
 
         User user = new User(id, name, email, phone, address, city, state);
@@ -36,6 +36,9 @@ public class UserUpdate extends HttpServlet {
         boolean result = service.userUpdate(user);
 
         if (result) {
+            HttpSession session1 = req.getSession();
+            session1.removeAttribute("user");
+            session1.setAttribute("user", service.getUser(id));
             resp.sendRedirect("profile.jsp");
         } else {
             resp.sendRedirect("error.jsp");

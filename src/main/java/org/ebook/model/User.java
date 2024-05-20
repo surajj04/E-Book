@@ -7,7 +7,6 @@ public class User {
     private String password;
     private String phone;
     private String address;
-    private String landmark;
     private String city;
     private String state;
 
@@ -72,13 +71,6 @@ public class User {
         this.address = address;
     }
 
-    public String getLandmark() {
-        return landmark;
-    }
-
-    public void setLandmark(String landmark) {
-        this.landmark = landmark;
-    }
 
     public String getCity() {
         return city;
@@ -105,7 +97,6 @@ public class User {
                 ", password='" + password + '\'' +
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
-                ", landmark='" + landmark + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 '}';

@@ -32,6 +32,7 @@ public class RegisterServlet extends HttpServlet {
                 res.sendRedirect("successful.jsp");
             } else {
                 session.setAttribute("failed", "Something wrong on Server..");
+                res.sendRedirect("error.jsp");
             }
         } catch (Exception e) {
             e.printStackTrace();

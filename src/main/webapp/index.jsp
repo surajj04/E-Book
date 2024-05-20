@@ -16,7 +16,7 @@
             <body>
               <c:if test="${empty user}">
                 <c:redirect url="login.jsp" />
-            </c:if>
+              </c:if>
               <% User user=(User) session.getAttribute("user"); %>
 
                 <%if (user !=null && !user.getName().equals("admin")) { %>
@@ -78,7 +78,7 @@
                                           class="flex px-2 py-2 bg-red-600 mr-1 text-white font-semibold rounded text-xs my-auto items-center">
                                           <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
                                           <span class="ml-1 self-center">Add Cart</span>
-                                      </a>
+                                        </a>
                                         <button
                                           class="flex px-2 py-2 bg-green-600 mr-1 text-white font-semibold rounded text-xs my-auto items-center">
                                           <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i>
@@ -156,11 +156,11 @@
                                         </p>
                                       </div>
                                       <div class="flex my-2">
-                                        <button
+                                        <a href="addcart?id=<%=b.getBookId() %>"
                                           class="flex px-2 py-2 bg-red-600 mr-1 text-white font-semibold rounded text-xs my-auto items-center">
                                           <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
                                           <span class="ml-1 self-center">Add Cart</span>
-                                        </button>
+                                        </a>
                                         <button
                                           class="flex px-2 py-2 bg-green-600 mr-1 text-white font-semibold rounded text-xs my-auto items-center">
                                           <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i>
@@ -230,11 +230,11 @@
                                         </p>
                                       </div>
                                       <div class="flex my-2">
-                                        <button
+                                        <a href="addcart?id=<%=b.getBookId() %>"
                                           class="flex px-2 py-2 bg-red-600 mr-1 text-white font-semibold rounded text-xs my-auto items-center">
                                           <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
                                           <span class="ml-1 self-center">Add Cart</span>
-                                        </button>
+                                        </a>
                                         <button
                                           class="flex px-2 py-2 bg-green-600 mr-1 text-white font-semibold rounded text-xs my-auto items-center">
                                           <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i>
