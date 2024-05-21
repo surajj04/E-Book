@@ -103,14 +103,20 @@ public class CartService {
             List<Integer> booksId = existingBookIds(id);
             booksId.remove(i);
             String bookIdJson = convertJSON(booksId);
-
-            String sql = "UPDATE cart SET bookId = ? WHERE cartId = ?";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, bookIdJson);
-            ps.setInt(2, id);
-
-            if (ps.executeUpdate() == 1) {
+            System.out.println(booksId);
+            System.out.println(bookIdJson);
+            System.out.println(existingBookIds(id).size());
+            if (existingBookIds(id).size() == 1) {
+                removeAllCart(id);
                 return true;
+            } else {
+                String sql = "UPDATE cart SET bookId = ? WHERE cartId = ?";
+                PreparedStatement ps = con.prepareStatement(sql);
+                ps.setString(1, bookIdJson);
+                ps.setInt(2, id);
+                if (ps.executeUpdate() == 1) {
+                    return true;
+                }
             }
 
         } catch (Exception e) {

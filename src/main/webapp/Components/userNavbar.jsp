@@ -27,7 +27,7 @@
 			</li>
 			<li class="text-sm">
 				<button class="flex items-center justify-center px-1 py-2 text-gray-900 font-semibold rounded">
-					<a href="order.jsp" class="border-b-2 border-transparent  mx-3 mb-2 sm:mb-0"><i
+					<a href="order" class="border-b-2 border-transparent  mx-3 mb-2 sm:mb-0"><i
 							class="fa-solid fa-box-open"></i> Order</a>
 				</button>
 			</li>

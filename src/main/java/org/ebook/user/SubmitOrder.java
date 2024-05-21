@@ -35,7 +35,7 @@ public class SubmitOrder extends HttpServlet {
             boolean result = service1.submitOrder(order);
             if (result) {
                 service2.removeAllCart(user.getId());
-                req.getRequestDispatcher("/order").forward(req, resp);
+                req.getRequestDispatcher("ordersuccess.jsp").forward(req, resp);
             } else {
                 resp.sendRedirect("error.jsp");
             }

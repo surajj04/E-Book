@@ -77,4 +77,37 @@ public class OrderService {
         return orders;
     }
 
+    public List<Order> showAllOrder() {
+
+        List<Order> orders = new ArrayList<>();
+
+        try {
+
+            String sql = "Select * from Orders;";
+
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()){
+                Order order = new Order();
+                order.setOrderID(rs.getString(2));
+                order.setBooksID(service.convertToArrayList(rs.getString(3)));
+                order.setTotalPrice(rs.getDouble(4));
+                order.setStatus(rs.getString(5));
+                order.setName(rs.getString(6));
+                order.setEmail(rs.getString(7));
+                order.setPhoneNO(rs.getString(8));
+                order.setAddress(rs.getString(9));
+                order.setShippingAddress(rs.getString(10));
+                order.setPayment(rs.getString(11));
+
+                orders.add(order);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return orders;
+    }
+
 }
