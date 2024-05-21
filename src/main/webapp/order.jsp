@@ -75,16 +75,20 @@
                                                                     </li>
                                                                     <%} %>
                                                           </ul>
-                                                          <p class="text-sm text-gray-900 font-semibold">Total Price: $
-                                                            <%= o.getTotalPrice() %>
-                                                          </p>
+                                                          
                                                           <p class="text-sm text-gray-900 font-semibold my-2">Order
                                                             Status:
                                                             <%if(o.getStatus().equals("Pending")){%>
-                                                            <span class="text-orange-500"><%=o.getStatus()%></span>
-                                                            <%}else{%>
-                                                              <span class="text-green-500"><%=o.getStatus()%></span>
-                                                              <%}%>
+                                                              <span class="text-orange-500">
+                                                                <%=o.getStatus()%>
+                                                              </span>
+                                                              <%}else{%>
+                                                                <span class="text-green-500">
+                                                                  <%=o.getStatus()%>
+                                                                </span>
+                                                                <%}%>
+                                                          </p>
+                                                          <p class="text-sm text-gray-900 font-semibold">Order Date:<%= o.getOrderDate() %>
                                                           </p>
                                                         </div>
                                                       </div>
@@ -118,6 +122,8 @@
                                                           Method:</span>
                                                         <%= o.getPayment() %>
                                                       </p>
+                                                      <p class="text-sm text-gray-900 font-semibold">Total Price: $<%= o.getTotalPrice() %>
+                                                      </p>
                                                     </td>
                                                     <td class="px-4 py-3 text-sm border">
                                                       <p class="text-black my-1"><span class="font-semibold">Shipping
@@ -144,6 +150,7 @@
                                     </section>
 
                                   </div>
+                                  <%@include file="Components/footer.jsp" %>
 
                 </body>
 

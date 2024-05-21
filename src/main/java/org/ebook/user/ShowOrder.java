@@ -26,7 +26,7 @@ public class ShowOrder extends HttpServlet {
             User user = (User) session1.getAttribute("user");
 
             List<Order> orders = service.showOrder(user.getId());
-
+            System.out.println(orders);
             HttpSession session2 = req.getSession();
             session2.setAttribute("orderDetails", orders);
 

@@ -81,11 +81,6 @@
                                         </a>
                                         <button
                                           class="flex px-2 py-2 bg-green-600 mr-1 text-white font-semibold rounded text-xs my-auto items-center">
-                                          <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i>
-                                          <span class="ml-1 self-center">Detail</span>
-                                        </button>
-                                        <button
-                                          class="flex px-2 py-2 bg-red-600 mr-1 text-white font-semibold rounded text-xs my-auto items-center">
                                           <i class="fa-solid fa-dollar-sign" style="color: #ffffff;"></i>
                                           <span class="ml-1 self-center">
                                             <%= b.getPrice() %>
@@ -163,11 +158,6 @@
                                         </a>
                                         <button
                                           class="flex px-2 py-2 bg-green-600 mr-1 text-white font-semibold rounded text-xs my-auto items-center">
-                                          <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i>
-                                          <span class="ml-1 self-center">Detail</span>
-                                        </button>
-                                        <button
-                                          class="flex px-2 py-2 bg-red-600 mr-1 text-white font-semibold rounded text-xs my-auto items-center">
                                           <i class="fa-solid fa-dollar-sign" style="color: #ffffff;"></i>
                                           <span class="ml-1 self-center">
                                             <%= b.getPrice() %>
@@ -237,11 +227,6 @@
                                         </a>
                                         <button
                                           class="flex px-2 py-2 bg-green-600 mr-1 text-white font-semibold rounded text-xs my-auto items-center">
-                                          <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i>
-                                          <span class="ml-1 self-center">Detail</span>
-                                        </button>
-                                        <button
-                                          class="flex px-2 py-2 bg-red-600 mr-1 text-white font-semibold rounded text-xs my-auto items-center">
                                           <i class="fa-solid fa-dollar-sign" style="color: #ffffff;"></i>
                                           <span class="ml-1 self-center">
                                             <%= b.getPrice() %>
@@ -261,8 +246,6 @@
                               </a>
                             </div>
                           </div>
-
-
                           <!-- footer -->
                           <%@include file="Components/footer.jsp" %>
             </body>

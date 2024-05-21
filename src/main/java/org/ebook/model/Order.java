@@ -1,5 +1,6 @@
 package org.ebook.model;
 
+import java.util.Date;
 import java.util.List;
 
 public class Order {
@@ -14,6 +15,7 @@ public class Order {
     private String address;
     private String shippingAddress;
     private String payment;
+    private Date orderDate;
 
     public Order() {
     }
@@ -130,5 +132,13 @@ public class Order {
 
     public void setPayment(String payment) {
         this.payment = payment;
+    }
+
+    public Date getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
     }
 }

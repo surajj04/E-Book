@@ -67,7 +67,7 @@ public class OrderService {
                 order.setAddress(rs.getString(9));
                 order.setShippingAddress(rs.getString(10));
                 order.setPayment(rs.getString(11));
-
+                order.setOrderDate(rs.getDate(12));
                 orders.add(order);
             }
 
@@ -100,7 +100,7 @@ public class OrderService {
                 order.setAddress(rs.getString(9));
                 order.setShippingAddress(rs.getString(10));
                 order.setPayment(rs.getString(11));
-
+                order.setOrderDate(rs.getDate(12));
                 orders.add(order);
             }
 
@@ -108,6 +108,44 @@ public class OrderService {
             e.printStackTrace();
         }
         return orders;
+    }
+
+    public boolean updateStatus(int id) {
+
+        try {
+            String sql = "UPDATE Orders SET Status = ? WHERE orderID = ?;";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1,"Shipped");
+            ps.setInt(2, id);
+
+            if (ps.executeUpdate() == 1) {
+                return true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    public boolean deliveredItem(int id) {
+
+        try {
+            String sql = "UPDATE Orders SET Status = ? WHERE orderID = ?;";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1,"Delivered");
+            ps.setInt(2, id);
+
+            if (ps.executeUpdate() == 1) {
+                return true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 
 }
