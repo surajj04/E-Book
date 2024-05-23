@@ -133,7 +133,7 @@
                                                                                         <%}%>
                                                                                             <% if(o.getStatus().equals("Shipped")){
                                                                                                 %>
-                                                                                                <a href="../shipped?id=<%=o.getOrderID()%>"
+                                                                                                <a href="../delivered?id=<%=o.getOrderID()%>"
                                                                                                     class="relative group cursor-pointer mx-auto">
                                                                                                     <button 
                                                                                                         class="flex items-center justify-center w-8 h-8 text-center text-white transition bg-blue-700 rounded-full shadow ripple hover:shadow-lg hover:bg-green-800 focus:outline-none">
@@ -149,7 +149,7 @@
 
                                                                                                 <% if(o.getStatus().equals("Delivered")){
                                                                                                     %>
-                                                                                                    <a href=""
+                                                                                                    <a href="#"
                                                                                                         class="relative group cursor-pointer mx-auto">
                                                                                                         <button 
                                                                                                             class="flex items-center justify-center w-8 h-8 text-center text-gray-900 transition bg-gray-100 rounded-full shadow ripple hover:shadow-lg hover:bg-green-800 focus:outline-none">

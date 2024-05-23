@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/shipped")
+@WebServlet("/delivered")
 public class ShipedOrder extends HttpServlet {
     private OrderService service = new OrderService();
     @Override
